@@ -1,0 +1,77 @@
+{
+  "global-token": {
+    "color": {
+      "primary": {
+        "50": {
+          "type": "color",
+          "value": "#ebf1ffff",
+          "blendMode": "normal",
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "collection": "global-token",
+              "scopes": ["ALL_SCOPES"],
+              "variableId": "VariableID:203:10",
+              "exportKey": "variables"
+            }
+          }
+        },
+        "100": {
+          "type": "color",
+          "value": "#d4e3ffff",
+          "blendMode": "normal",
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "collection": "global-token",
+              "scopes": ["ALL_SCOPES"],
+              "variableId": "VariableID:203:14",
+              "exportKey": "variables"
+            }
+          }
+        }
+      },
+      "white": {
+        "type": "color",
+        "value": "#ffffffff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "collection": "global-token",
+            "scopes": ["ALL_SCOPES"],
+            "variableId": "VariableID:203:12",
+            "exportKey": "variables"
+          }
+        }
+      }
+    }
+  },
+  "arias-token": {
+    "color": {
+      "background": {
+        "light": {
+          "type": "color",
+          "value": "{global-token.color.primary.50}",
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "collection": "arias-token",
+              "scopes": ["ALL_SCOPES"],
+              "variableId": "VariableID:203:15",
+              "exportKey": "variables"
+            }
+          }
+        },
+        "normal": {
+          "type": "color",
+          "value": "{global-token.color.primary.100}",
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "collection": "arias-token",
+              "scopes": ["ALL_SCOPES"],
+              "variableId": "VariableID:203:17",
+              "exportKey": "variables"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Do not edit directly, this file was auto-generated.
+-->
+<resources>
+  <color name="global_token_color_primary_50">#ffebf1ff</color>
+  <color name="global_token_color_primary_100">#ffd4e3ff</color>
+  <color name="global_token_color_white">#ffffffff</color>
+  <color name="arias_token_color_background_light">#ffebf1ff</color>
+  <color name="arias_token_color_background_normal">#ffd4e3ff</color>
+</resources>
