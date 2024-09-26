@@ -1,0 +1,39 @@
+name: Build and Upload Design Tokens
+
+# 'main'ブランチにpushされた際に実行
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build Design Tokens
+    runs-on: ubuntu-latest
+
+    steps:
+      # リポジトリをチェックアウト
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Node.jsのセットアップ
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      # npm依存関係のインストール
+      - name: Install dependencies
+        run: npm install
+
+      # Style Dictionaryを実行してデザイン定義ファイルを生成
+      - name: Build design tokens
+        run: style-dictionary build
+
+      # ビルド成果物をアーティファクトとしてアップロード
+      - name: Upload generated tokens as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: design-tokens
+          path: style-dictionary/build # アップロードするファイルのパス
+
