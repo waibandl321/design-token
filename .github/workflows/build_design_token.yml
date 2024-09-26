@@ -32,7 +32,7 @@ jobs:
 
       # ビルド成果物をアーティファクトとしてアップロード
       - name: Upload generated tokens as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: design-tokens
           path: |
