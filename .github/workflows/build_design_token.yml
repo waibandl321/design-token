@@ -28,7 +28,7 @@ jobs:
 
       # Style Dictionaryを実行してデザイン定義ファイルを生成
       - name: Build design tokens
-        run: style-dictionary build
+        run: npm run build
 
       # ビルド成果物をアーティファクトとしてアップロード
       - name: Upload generated tokens as artifact
