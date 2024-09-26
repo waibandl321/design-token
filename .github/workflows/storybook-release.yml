@@ -1,0 +1,48 @@
+name: Build Storybook and deploy to GitHub Pages
+
+# 'main'ブランチにpushされた際に実行
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build Storybook and deploy to GitHub Pages
+    runs-on: ubuntu-latest
+
+    # パーミッション設定
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    steps:
+      # リポジトリをチェックアウト
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Node.jsのセットアップ
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # npm依存関係のインストール
+      - name: Install dependencies
+        run: npm install
+
+      # Style Dictionaryを実行してデザイン定義ファイルを生成
+      - name: Build design tokens
+        run: npm run build-storybook
+
+      # ビルド成果物をアーティファクトとしてアップロード
+      - name: Upload artifact of storybook
+        uses: actions/upload-artifact@v4
+        with:
+          path: "./storybook-static"
+
+      # GitHub Pagesにデプロイ
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/upload-artifact@v4
