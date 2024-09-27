@@ -40,6 +40,7 @@ jobs:
       - name: Upload artifact of storybook
         uses: actions/upload-artifact@v4
         with:
+          name: github-pages
           path: "./storybook-static"
 
       # GitHub Pagesにデプロイ
