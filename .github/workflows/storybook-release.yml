@@ -1,4 +1,4 @@
-name: Build Storybook and deploy to GitHub Pages
+name: Build and Deploy Storybook to GitHub Pages
 
 # 'main'ブランチにpushされた際に実行
 on:
@@ -11,10 +11,8 @@ jobs:
     name: Build Storybook and deploy to GitHub Pages
     runs-on: ubuntu-latest
 
-    # パーミッション設定
     permissions:
-      contents: read
-      pages: write
+      pages: write # GitHub Pagesにデプロイするための権限
       id-token: write
 
     steps:
@@ -36,16 +34,8 @@ jobs:
       - name: Build Storybook
         run: npm run build-storybook
 
-      # ビルド成果物をアーティファクトとしてアップロード
-      - name: Upload artifact of storybook
-        uses: actions/upload-artifact@v4
-        with:
-          name: github-pages
-          path: "./storybook-static"
-
       # GitHub Pagesにデプロイ
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4
         with:
-          artifact_name: github-pages # アーティファクトの名前を指定
+          folder: ./storybook-static
